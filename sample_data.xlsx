@@ -1,0 +1,15 @@
+import pandas as pd
+# Define the Excel file name
+excel_file = 'sample_data.xlsx'
+# Define the output text file name
+output_file = 'comments.txt'
+# Read the Excel file
+df = pd.read_excel(excel_file)
+# Extract the 'comments' column
+comments = df['comments']
+# Open the output text file for writing
+with open(output_file, 'w') as txtfile:
+    # Write each comment to the text file
+    for comment in comments:
+        txtfile.write(str(comment) + '\n')
+print("Comments extracted and saved to", output_file)

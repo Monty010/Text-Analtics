@@ -1,0 +1,22 @@
+import csv
+# Define the CSV file name
+csv_file = 'sample_data.csv'
+# Define the output text file name
+output_file = 'comments.txt'
+# Open the CSV file for reading
+with open(csv_file, 'r', newline='') as csvfile:
+    # Create a CSV reader object
+    reader = csv.DictReader(csvfile)
+    # Initialize a list to store the comments
+    comments = []
+    # Iterate over each row in the CSV file
+    for row in reader:
+list
+# Extract the 'comments' column value and add it to the
+comments.append(row['comments'])
+# Open the output text file for writing
+with open(output_file, 'w') as txtfile:
+    # Write each comment to the text file
+    for comment in comments:
+        txtfile.write(comment + '\n')
+print("Comments extracted and saved to", output_file)
